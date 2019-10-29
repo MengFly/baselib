@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.junit.jupiter.api.Test;
 
-import concurrent.TaskUtil;
+import com.mengfly.lib.concurrent.TaskUtil;
 
 class TaskUtilTest {
 
@@ -54,6 +54,31 @@ class TaskUtilTest {
 			});
 			j.addAndGet(1);
 		}
+	}
+	
+	@Test
+	void testProcess(){
+		long start = System.currentTimeMillis();
+		TaskUtil.getInstance().splitTaskExec(TestUtil.getArangeList(100), 1, (ls, index) ->{
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}, null, process -> {
+			System.out.println("now process is -> " + process);
+		});
+		System.out.println("time is ->" + (System.currentTimeMillis() - start)/1000);
+		
+		start = System.currentTimeMillis();
+		for(int i = 0; i < 100; i ++) {
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		System.out.println("time is ->" + (System.currentTimeMillis() - start)/1000);
 	}
 
 }

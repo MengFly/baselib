@@ -34,5 +34,14 @@ public class StringUtil {
 	public static List<Double> splitToDoubleList(String str, String separator) {
 		return splitToAnyList(str, separator, Double::valueOf);
 	}
+	
+	public static String newRepeat(String repeatRes, int count) {
+		StringBuilder result = new StringBuilder(repeatRes.length()*count);
+		for(int i =0; i< count; i++) {
+			result.append(repeatRes);
+		}
+		return result.toString();
+		
+	}
 
 }

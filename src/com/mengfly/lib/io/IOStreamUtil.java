@@ -1,8 +1,11 @@
-package com.mengfly.lib;
+package com.mengfly.lib.io;
 
 import java.io.Closeable;
 import java.io.IOException;
 
+/**
+ * @author wangp
+ */
 public class IOStreamUtil {
 
 	/**

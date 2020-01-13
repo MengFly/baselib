@@ -1,14 +1,13 @@
 package com.mengfly.lib;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.mengfly.lib.concurrent.TaskUtil;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.junit.jupiter.api.Test;
-
-import com.mengfly.lib.concurrent.TaskUtil;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TaskUtilTest {
 
